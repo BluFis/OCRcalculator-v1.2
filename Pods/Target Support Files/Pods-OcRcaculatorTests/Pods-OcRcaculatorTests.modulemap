@@ -1,0 +1,6 @@
+framework module Pods_OcRcaculatorTests {
+  umbrella header "Pods-OcRcaculatorTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

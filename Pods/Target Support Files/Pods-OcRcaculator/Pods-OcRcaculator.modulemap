@@ -1,0 +1,6 @@
+framework module Pods_OcRcaculator {
+  umbrella header "Pods-OcRcaculator-umbrella.h"
+
+  export *
+  module * { export * }
+}
