@@ -9,7 +9,7 @@
 import UIKit
 import SwiftOCR
 import AVFoundation
-import GPUImage
+
 
 extension UIImage {
     func detectOrientationDegree () -> CGFloat {
@@ -34,7 +34,8 @@ class ViewController: UIViewController{
     @IBOutlet weak var memoryDisplay: UILabel!
     @IBOutlet weak var scanView: UIView!
     
-    @IBOutlet weak var actureLabel: UILabel!
+
+    @IBOutlet weak var resetBtn: mathButton!
     
     @IBOutlet weak var AutoBtn: Button!
     @IBOutlet weak var recogBtn: Button!
@@ -57,7 +58,10 @@ class ViewController: UIViewController{
             return (NumberFormatter().number(from: label.text!)?.doubleValue)!
         }
         set {
-            label.text = String(newValue).beautifyNumbers()
+            
+                label.text = String(newValue).beautifyNumbers()
+            
+            
         }
     }
     var variables = Dictionary<String,Double>() {
@@ -105,7 +109,7 @@ class ViewController: UIViewController{
              self.scanView.layer.frame = CGRect(x: self.scanView.layer.frame.origin.x, y: self.cameraView.layer.frame.maxY, width: self.scanView.layer.frame.width, height: self.scanView.layer.frame.height)
             DispatchQueue.main.async {
                
-                self.timer = Timer.scheduledTimer(timeInterval: 3.5,target:self,selector:#selector(self.animate),userInfo:nil,repeats:true)
+                self.timer = Timer.scheduledTimer(timeInterval: 3.2,target:self,selector:#selector(self.animate),userInfo:nil,repeats:true)
                 
             }
         })
@@ -207,6 +211,9 @@ class ViewController: UIViewController{
     }
     @IBAction func takePhotoButtonPressed (_ sender: UIButton) {
         DispatchQueue.global(qos: .userInitiated).async {
+            if !self.isAuto{
+            self.reset(self.resetBtn)
+            }
             let capturedType = self.stillImageOutput.connection(withMediaType: AVMediaTypeVideo)
             self.stillImageOutput.captureStillImageAsynchronously(from: capturedType!) { [weak self] buffer, error -> Void in
                 if buffer != nil {
@@ -218,9 +225,6 @@ class ViewController: UIViewController{
                     self?.ocrInstance.recognize(croppedImage!) { [weak self] recognizedString in
                         DispatchQueue.main.async {
                             self?.doubleAdmit.recongonize(str: recognizedString) == "" ? print("error") : self?.caculate(str:(self?.doubleAdmit.recongonize(str: recognizedString))!)
-                            
-                            
-                            
                         }
                     }
                 } else {
@@ -253,7 +257,12 @@ class ViewController: UIViewController{
 extension ViewController{
     
     func caculate(str:String) {
-        let digit = str
+       var digit = ""
+        if str != "." && str != "-"{
+          digit = str
+        }else{
+            return
+        }
         //print("\(digit) was touched")
         
         if userIsInTheMiddleOfTyping {

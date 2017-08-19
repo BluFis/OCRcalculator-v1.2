@@ -162,6 +162,27 @@ open class SwiftOCR {
               //  print(preOrign)
                 preOrign = rec.origin.x
             }
+            
+            if recognizedString.characters.count == 2{
+                
+                if let disLast = distance.last{
+                    if let rectFirstWidth = rect.first?.width{
+                      let precentage = ((disLast - rectFirstWidth)/rectFirstWidth)
+                        if recognizedString.characters.first != "1"{
+                            if precentage > 0.3{
+                                recognizedString.insert(".", at: recognizedString.index(recognizedString.startIndex, offsetBy: 1))
+                            }
+                        }else{
+                            if precentage > 1{
+                                 recognizedString.insert(".", at: recognizedString.index(recognizedString.startIndex, offsetBy: 1))
+                            }
+                        }
+                    }
+                }
+                
+                
+                
+            }else{
             var sum:CGFloat = 0.0
             for dis in distance{
               //  print(dis)
@@ -169,18 +190,21 @@ open class SwiftOCR {
                 
             }
             var index = [Int]()
+            
             for dis in distance{
                 let precentage = abs(dis - sum / CGFloat(distance.count)) / (sum / CGFloat(distance.count))
-               // print(precentage)
-                if precentage > 0.2{
-                    index.append(distance.index(of: dis)! as Int)
+                print(precentage)
+                
+                if precentage > 0.4 && precentage != 1{
+                    index.append((distance.index(of: dis)! as Int))
                   //  print(index)
                 }
             }
-            if index.count > 0 && recognizedString.characters.count > 0{
+            if index.count > 0 && recognizedString.characters.count > 0 && rect.count <= recognizedString.characters.count{
             
               recognizedString.insert(".", at:recognizedString.index(recognizedString.startIndex, offsetBy: index.last!))
             }
+        }
 //            if let ret = rect.first{
 //                let imageView = preprocessedImage.cgImage?.cropping(to: CGRect(origin: CGPoint(x:ret.origin.x - ret.width,y:ret.origin.y), size: ret.size))
 //

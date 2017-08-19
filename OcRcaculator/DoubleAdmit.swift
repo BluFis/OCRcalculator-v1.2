@@ -6,6 +6,7 @@
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
+
 import Foundation
 import UIKit
 class DoubleAdmit {
@@ -35,23 +36,24 @@ class DoubleAdmit {
             if result.charAt(index: index) == "."{
                 
                 dot.count += 1
-                dot.index.
+                dot.index.append(result.index(result.startIndex, offsetBy: index))
             }
             
             if result.charAt(index: index) == "-"{
                 
                 hipen.count += 1
-                hipen.index.append(result.index(of: "-")!)
+                
             }
             
         }
         print("result:\(result)")
         
-        result = result.replacingOccurrences(of: ".", with: "")
+        result = result.replacingOccurrences(of: ".", with: "X")
         result = result.replacingOccurrences(of: "-", with: "")
         
         if dot.count >= 1{
-            result.insert(".", at: (dot.index.last!))
+            result.insert(".", at: dot.index.last!)
+            result = result.replacingOccurrences(of: "X", with: "")
         }
         
         if hipen.count >= 1{
@@ -65,7 +67,8 @@ class DoubleAdmit {
 struct elementIndex {
     
     var count:Int = 0
-    var index = IndexSet()
+    var index = Array<String.Index>()
+    
 }
 extension String{
     
@@ -76,12 +79,9 @@ extension String{
             return nil
             
         }
-        
-        let NS = NSString(string: self)
-        let char = NS.substring(with: NSRange(location: index,length: 1))
+        return self[self.index(startIndex, offsetBy: index)]
         
         
-        
-        return  char.characters.first  }
+    }
 }
 
