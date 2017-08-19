@@ -115,7 +115,7 @@ class ViewController: UIViewController{
             self.scanView.alpha = 0
             timer.invalidate()
             isAuto = false
-            self.AutoBtn.setTitle("自动识别",for:.normal)
+            self.AutoBtn.setTitle("自动",for:.normal)
       
         }
 
