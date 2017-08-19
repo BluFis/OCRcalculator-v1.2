@@ -88,19 +88,19 @@ open class SwiftOCR {
         func checkWhiteAndBlackListForCharacter(_ character: Character) -> Bool {
             let whiteList =   characterWhiteList?.characters.contains(character) ?? true
             let blackList = !(characterBlackList?.characters.contains(character) ?? false)
+            
             return whiteList && blackList
         }
-            var rect = [CGRect]()
-            var distance = [CGFloat]()
-            var preOrign:CGFloat = 0.0
+
         DispatchQueue.global(qos: .userInitiated).async {
             let preprocessedImage      = self.delegate?.preprocessImageForOCR(image) ?? self.preprocessImageForOCR(image)
+            
             let blobs                  = self.extractBlobs(preprocessedImage)
             var recognizedString       = ""
             var ocrRecognizedBlobArray = [SwiftOCRRecognizedBlob]()
+            
             for blob in blobs {
                 do {
-                    rect.append(blob.1)
                     let blobData       = self.convertImageToFloatArray(blob.0, resize: true)
                     let networkResult  = try self.network.update(inputs: blobData)
                     
@@ -112,7 +112,7 @@ open class SwiftOCR {
                          recognizedString.append(recognizedChar)
                          */
                         
-                        for (networkIndex, _) in networkResult.enumerated().sorted(by: {$0.0.element > $0.1.element}) {
+                        for (networkIndex, _) in networkResult.enumerated().sorted(by: {$0.element > $1.element}) {
                             let character = indexToCharacter(networkIndex)
                             
                             guard checkWhiteAndBlackListForCharacter(character) else {
@@ -147,54 +147,12 @@ open class SwiftOCR {
                 } catch {
                     print(error)
                 }
-             
                 
             }
-            if let x = rect.first?.origin.x{
-               preOrign = x
-            }else{
-                return
-            }
             
-            
-            for rec in rect{
-                distance.append(rec.origin.x - preOrign)
-              //  print(preOrign)
-                preOrign = rec.origin.x
-            }
-            var sum:CGFloat = 0.0
-            for dis in distance{
-              //  print(dis)
-                sum += dis
-                
-            }
-            var index = [Int]()
-            for dis in distance{
-                let precentage = abs(dis - sum / CGFloat(distance.count)) / (sum / CGFloat(distance.count))
-               // print(precentage)
-                if precentage > 0.2{
-                    index.append(distance.index(of: dis)! as Int)
-                  //  print(index)
-                }
-            }
-            if index.count > 0 && recognizedString.characters.count > 0{
-            
-              recognizedString.insert(".", at:recognizedString.index(recognizedString.startIndex, offsetBy: index.last!))
-            }
-//            if let ret = rect.first{
-//                let imageView = preprocessedImage.cgImage?.cropping(to: CGRect(origin: CGPoint(x:ret.origin.x - ret.width,y:ret.origin.y), size: ret.size))
-//
-//                 if imageView?.colorSpace?.numberOfComponents == 2{
-//
-//                    recognizedString.insert("-", at: recognizedString.startIndex)
-//                 }else {
-//                    print("error")
-//                }
-//            }
             self.currentOCRRecognizedBlobs = ocrRecognizedBlobArray
             completionHandler(recognizedString)
         }
-
     }
     
     /**
@@ -233,7 +191,7 @@ open class SwiftOCR {
      
      */
     
-    open func extractBlobs(_ image: OCRImage) -> [(OCRImage, CGRect)] {
+    internal func extractBlobs(_ image: OCRImage) -> [(OCRImage, CGRect)] {
         
         #if os(iOS)
             let pixelData = image.cgImage?.dataProvider?.data
@@ -421,7 +379,7 @@ open class SwiftOCR {
                 }
                 
                 let transposedData = Array(data[minY...maxY].map({return $0[(minX + 2)...(maxX - 2)]})).transpose() // [y][x] -> [x][y]
-                let reducedMaxIndexArray = transposedData.map({return $0.reduce(0, {return UInt32($0.0) + UInt32($0.1)})}) //Covert to UInt32 to prevent overflow
+                let reducedMaxIndexArray = transposedData.map({return $0.reduce(0, {return UInt32($0) + UInt32($1)})}) //Covert to UInt32 to prevent overflow
                 let maxIndex = reducedMaxIndexArray.enumerated().max(by: {return $0.1 < $1.1})?.0 ?? 0
                 
                 
@@ -499,7 +457,7 @@ open class SwiftOCR {
             }
         }
         
-        outputImages.sort(by: {return $0.0.1.origin.x < $0.1.1.origin.x})
+        outputImages.sort(by: {return $0.1.origin.x < $1.1.origin.x})
         return outputImages
         
     }
@@ -748,7 +706,7 @@ public struct SwiftOCRRecognizedBlob {
     public let boundingBox:              CGRect!
     
     init(charactersWithConfidence: [(character: Character, confidence: Float)]!, boundingBox: CGRect) {
-        self.charactersWithConfidence = charactersWithConfidence.sorted(by: {return $0.0.confidence > $0.1.confidence})
+        self.charactersWithConfidence = charactersWithConfidence.sorted(by: {return $0.confidence > $1.confidence})
         self.boundingBox = boundingBox
     }
     
