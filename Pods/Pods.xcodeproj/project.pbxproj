@@ -103,7 +103,6 @@
 		4328789219028BB1C42AA7B6CC19A7A4 /* GPUImageThresholdEdgeDetectionFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A2FAA2C020C3D85E5C79CD7B83A0E17 /* GPUImageThresholdEdgeDetectionFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43B2BBA6E662CED1F4571B87E571946F /* GPUImageFramebuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = A4E6E81986FB169E953262EB8ECCE50E /* GPUImageFramebuffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43CB99203F824742D5BF3CCA122CCA6F /* GPUImageSingleComponentGaussianBlurFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3048DBE624B42C2EDE1906B82A93386B /* GPUImageSingleComponentGaussianBlurFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4453E51D349A24B30111F9483EA022E2 /* SwiftOCRTraining.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186CA0D5562AF100657FDC1999C3AD8F /* SwiftOCRTraining.swift */; };
 		454AD96D338923A849372900E72137A5 /* GPUImageCrosshairGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5570305A627683A34EC8A716573A8C15 /* GPUImageCrosshairGenerator.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		46CB8980F9B86D44DB369234EA5D0FB5 /* GPUImageLightenBlendFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E88F40EB8636062C5A2C5DF79BE5B38 /* GPUImageLightenBlendFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		470F75630CC92C8D827B49E20DF894D0 /* GPUImageRGBErosionFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 01C6A3EEAB2F4DA267C9D02303C75F08 /* GPUImageRGBErosionFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -454,7 +453,6 @@
 		16EB8F116CF11FBF22FB8DA38AADA650 /* GPUImageMedianFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPUImageMedianFilter.h; path = framework/Source/GPUImageMedianFilter.h; sourceTree = "<group>"; };
 		1715A8EFF2DB1A76149FAB632B519A9E /* GPUImageiOSBlurFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageiOSBlurFilter.m; path = framework/Source/GPUImageiOSBlurFilter.m; sourceTree = "<group>"; };
 		17852ED26144C506B0DF700C8A29A1F2 /* GPUImagePosterizeFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImagePosterizeFilter.m; path = framework/Source/GPUImagePosterizeFilter.m; sourceTree = "<group>"; };
-		186CA0D5562AF100657FDC1999C3AD8F /* SwiftOCRTraining.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftOCRTraining.swift; path = framework/SwiftOCR/SwiftOCRTraining.swift; sourceTree = "<group>"; };
 		18D3264754CC5872771621435573A31A /* GPUImageMultiplyBlendFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPUImageMultiplyBlendFilter.h; path = framework/Source/GPUImageMultiplyBlendFilter.h; sourceTree = "<group>"; };
 		18EF3752350C3641E1B4FEDDB4A1B939 /* GPUImageSolidColorGenerator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageSolidColorGenerator.m; path = framework/Source/GPUImageSolidColorGenerator.m; sourceTree = "<group>"; };
 		18F48697E73AAE69D1975709410BDB14 /* GPUImageFramebufferCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageFramebufferCache.m; path = framework/Source/GPUImageFramebufferCache.m; sourceTree = "<group>"; };
@@ -960,7 +958,6 @@
 				74564221CE3B028030E720BA38BEABFC /* Random.swift */,
 				070CF7E35E279581F6D449495DFA3FDB /* Storage.swift */,
 				A242550D37ED4F17A3EADC65E4C60373 /* SwiftOCR.swift */,
-				186CA0D5562AF100657FDC1999C3AD8F /* SwiftOCRTraining.swift */,
 				6FC2967DB13C07DC0E5AA02C9D66C308 /* UnionFind.swift */,
 				C82A5808602710FC5B8E42EE12D30270 /* Vector.swift */,
 				3C860BA1434250B8CDF383DEEC62E45E /* Resources */,
@@ -1979,7 +1976,6 @@
 				3732B98D011E99E34EE5B658C3363903 /* Storage.swift in Sources */,
 				5D8C2DF692C07BF74B16DC69F35873E9 /* SwiftOCR-dummy.m in Sources */,
 				A775A5158A72E1EB2766A39F271542D6 /* SwiftOCR.swift in Sources */,
-				4453E51D349A24B30111F9483EA022E2 /* SwiftOCRTraining.swift in Sources */,
 				310032DB7BDA3570977B53E489BD83DF /* UnionFind.swift in Sources */,
 				04892DCE8C85A87A3D05AA1BE42188EE /* Vector.swift in Sources */,
 			);
@@ -2033,7 +2029,7 @@
 				MODULEMAP_FILE = "Target Support Files/GPUImage/GPUImage.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = GPUImage;
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos10.3;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2155,7 +2151,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -2299,7 +2295,7 @@
 				MODULEMAP_FILE = "Target Support Files/GPUImage/GPUImage.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = GPUImage;
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos10.3;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2337,7 +2333,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
