@@ -33,7 +33,7 @@ class ViewController: UIViewController{
     @IBOutlet weak var descriptionDisplay: UILabel!
     @IBOutlet weak var memoryDisplay: UILabel!
     @IBOutlet weak var scanView: UIView!
-    
+  
 
     @IBOutlet weak var resetBtn: mathButton!
     
@@ -55,7 +55,24 @@ class ViewController: UIViewController{
 
     var displayValue: Double {
         get {
+            var dotNumb = 0
+            var hiNumb = 0
+            for char in (label.text?.characters)!{
+                if char == "."{
+                  dotNumb += 1
+                }else if char == "-"{
+                  hiNumb += 1
+                }
+            }
+            if dotNumb > 1 || hiNumb > 1{
+                 dotNumb = 0
+                 hiNumb = 0
+                return 0.0
+            }else{
+                dotNumb = 0
+                hiNumb = 0
             return (NumberFormatter().number(from: label.text!)?.doubleValue)!
+            }
         }
         set {
             
@@ -211,9 +228,6 @@ class ViewController: UIViewController{
     }
     @IBAction func takePhotoButtonPressed (_ sender: UIButton) {
         DispatchQueue.global(qos: .userInitiated).async {
-            if !self.isAuto{
-            self.reset(self.resetBtn)
-            }
             let capturedType = self.stillImageOutput.connection(withMediaType: AVMediaTypeVideo)
             self.stillImageOutput.captureStillImageAsynchronously(from: capturedType!) { [weak self] buffer, error -> Void in
                 if buffer != nil {

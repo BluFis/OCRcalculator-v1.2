@@ -87,12 +87,12 @@ struct CalculatorBrain {
     ]
     
     private let errorOperations: Dictionary<String,ErrorOperation> = [
-        "√": ErrorOperation.unaryOperation({ 0.0 > $0 ? "SQRT of negative Number" : nil }),
-         "÷": ErrorOperation.binaryOperation({ 1e-8 >= fabs($0.1) ? "Division by Zero" : nil }),
-        "x⁻¹" : ErrorOperation.unaryOperation({ 1e-8 > fabs($0) ? "Division by Zero" : nil }),
-        "ln" : ErrorOperation.unaryOperation({ 0 > $0 ? "LN of negative Number" : nil }),
-        "log" : ErrorOperation.unaryOperation({ 0 > $0 ? "LOG of negative Number" : nil }),
-        "x!" : ErrorOperation.unaryOperation({ 0 > $0 ? "Factorial of negative Number" : nil })
+        "√": ErrorOperation.unaryOperation({ 0.0 > $0 ? "error" : nil }),
+         "÷": ErrorOperation.binaryOperation({ 1e-8 >= fabs($0.1) ? "error" : nil }),
+        "x⁻¹" : ErrorOperation.unaryOperation({ 1e-8 > fabs($0) ? "error" : nil }),
+        "ln" : ErrorOperation.unaryOperation({ 0 > $0 ? "error" : nil }),
+        "log" : ErrorOperation.unaryOperation({ 0 > $0 ? "error" : nil }),
+        "x!" : ErrorOperation.unaryOperation({ 0 > $0 ? "error" : nil })
     ]
     
     mutating func setOperand(_ operand: Double) {
