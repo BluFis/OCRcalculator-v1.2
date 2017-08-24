@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -511,7 +512,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78C-gx-ELH">
-                                <rect key="frame" x="171" y="268" width="73" height="200"/>
+                                <rect key="frame" x="170.66666666666666" y="268" width="73" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="0bP-tw-o8t"/>
                                 </constraints>
@@ -590,19 +591,103 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iPhone 6 Plus" translatesAutoresizingMaskIntoConstraints="NO" id="nMp-fV-z8v">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="y4t-EG-ROd">
+                                <rect key="frame" x="8" y="28.000000000000004" width="398" height="29.333333333333339"/>
+                                <color key="backgroundColor" red="0.24787890909999999" green="0.59741824870000004" blue="0.82011646029999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="y4t-EG-ROd" secondAttribute="height" multiplier="395:28" id="yMq-77-Eau"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="中文"/>
+                                    <segment title="English"/>
+                                </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="choice:" destination="Vkh-2e-NwU" eventType="valueChanged" id="FNL-ef-bWd"/>
+                                </connections>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uso-8A-j54">
+                                <rect key="frame" x="8" y="64.333333333333314" width="398" height="664"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iPhone 6 Plusen" translatesAutoresizingMaskIntoConstraints="NO" id="fY1-kS-wSf">
+                                        <rect key="frame" x="0.0" y="-0.33333333333331439" width="398" height="664"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9N-ce-2fn" customClass="Button" customModule="OcRcaculator" customModuleProvider="target">
+                                        <rect key="frame" x="152" y="595" width="93" height="40"/>
+                                        <color key="backgroundColor" red="0.46388703580000001" green="0.83743673559999998" blue="0.97934216259999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="9Nn-SA-BvG"/>
+                                            <constraint firstAttribute="width" secondItem="O9N-ce-2fn" secondAttribute="height" multiplier="123:53" id="jxp-VN-MGG"/>
+                                        </constraints>
+                                        <state key="normal" title="back">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backBtn:" destination="Vkh-2e-NwU" eventType="touchUpInside" id="YJ9-hN-Avf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </imageView>
+                                <constraints>
+                                    <constraint firstItem="fY1-kS-wSf" firstAttribute="centerY" secondItem="Uso-8A-j54" secondAttribute="centerY" id="Bbr-yu-ea4"/>
+                                    <constraint firstAttribute="bottom" secondItem="O9N-ce-2fn" secondAttribute="bottom" constant="29" id="R5t-3M-Amt"/>
+                                    <constraint firstItem="fY1-kS-wSf" firstAttribute="width" secondItem="Uso-8A-j54" secondAttribute="width" id="Va1-3c-9iA"/>
+                                    <constraint firstAttribute="width" secondItem="Uso-8A-j54" secondAttribute="height" multiplier="199:332" id="ahv-3A-EYl"/>
+                                    <constraint firstItem="O9N-ce-2fn" firstAttribute="centerX" secondItem="Uso-8A-j54" secondAttribute="centerX" id="b36-Mv-6kd"/>
+                                    <constraint firstItem="fY1-kS-wSf" firstAttribute="height" secondItem="Uso-8A-j54" secondAttribute="height" id="dUI-5K-dXw"/>
+                                    <constraint firstItem="fY1-kS-wSf" firstAttribute="centerX" secondItem="Uso-8A-j54" secondAttribute="centerX" id="jmD-it-GmS"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZRy-we-tEz">
+                                <rect key="frame" x="8" y="64.333333333333314" width="398" height="664"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iPhone 6 Plus" translatesAutoresizingMaskIntoConstraints="NO" id="no3-bi-I18">
+                                        <rect key="frame" x="0.0" y="0.0" width="398" height="664"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6BR-eJ-CQd" customClass="Button" customModule="OcRcaculator" customModuleProvider="target">
+                                        <rect key="frame" x="153" y="595" width="93" height="40"/>
+                                        <color key="backgroundColor" red="0.46388703580000001" green="0.83743673559999998" blue="0.97934216259999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="6BR-eJ-CQd" secondAttribute="height" multiplier="123:53" id="KGD-9C-09l"/>
+                                            <constraint firstAttribute="height" constant="40" id="tAx-8K-OkE"/>
+                                        </constraints>
+                                        <state key="normal" title="返回">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backBtn:" destination="Vkh-2e-NwU" eventType="touchUpInside" id="STQ-hV-9Cj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ZRy-we-tEz" secondAttribute="height" multiplier="199:332" id="7E3-2P-2t4"/>
+                                    <constraint firstItem="no3-bi-I18" firstAttribute="leading" secondItem="ZRy-we-tEz" secondAttribute="leading" id="8xU-v5-58k"/>
+                                    <constraint firstItem="6BR-eJ-CQd" firstAttribute="centerX" secondItem="ZRy-we-tEz" secondAttribute="centerX" id="98I-rU-V9m"/>
+                                    <constraint firstAttribute="bottom" secondItem="no3-bi-I18" secondAttribute="bottom" id="aH2-fk-mwn"/>
+                                    <constraint firstAttribute="bottom" secondItem="6BR-eJ-CQd" secondAttribute="bottom" constant="29" id="bby-zy-cQh"/>
+                                    <constraint firstAttribute="trailing" secondItem="no3-bi-I18" secondAttribute="trailing" id="bhE-fL-KEO"/>
+                                    <constraint firstItem="no3-bi-I18" firstAttribute="top" secondItem="ZRy-we-tEz" secondAttribute="top" id="f1U-2G-7DZ"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.46388703584671021" green="0.8374367356300354" blue="0.97934216260910034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="NTn-Hi-bCj" firstAttribute="top" secondItem="nMp-fV-z8v" secondAttribute="bottom" id="5ci-vt-M1H"/>
-                            <constraint firstItem="nMp-fV-z8v" firstAttribute="top" secondItem="qIm-aF-A4G" secondAttribute="top" id="FGS-6N-2ja"/>
-                            <constraint firstItem="nMp-fV-z8v" firstAttribute="leading" secondItem="qIm-aF-A4G" secondAttribute="leading" id="Mdt-1N-nvR"/>
-                            <constraint firstAttribute="trailing" secondItem="nMp-fV-z8v" secondAttribute="trailing" id="eIA-47-1HG"/>
+                            <constraint firstAttribute="trailing" secondItem="y4t-EG-ROd" secondAttribute="trailing" constant="8" id="Gx5-69-S9x"/>
+                            <constraint firstItem="ZRy-we-tEz" firstAttribute="top" secondItem="y4t-EG-ROd" secondAttribute="bottom" constant="8" id="JOH-h2-R6X"/>
+                            <constraint firstItem="Uso-8A-j54" firstAttribute="leading" secondItem="y4t-EG-ROd" secondAttribute="leading" id="LLU-NZ-Go0"/>
+                            <constraint firstItem="Uso-8A-j54" firstAttribute="top" secondItem="y4t-EG-ROd" secondAttribute="bottom" constant="8" id="Mna-33-dWR"/>
+                            <constraint firstItem="ZRy-we-tEz" firstAttribute="trailing" secondItem="y4t-EG-ROd" secondAttribute="trailing" id="NWm-lo-X8h"/>
+                            <constraint firstItem="y4t-EG-ROd" firstAttribute="leading" secondItem="qIm-aF-A4G" secondAttribute="leading" constant="8" id="aei-Wl-Mw9"/>
+                            <constraint firstItem="Uso-8A-j54" firstAttribute="trailing" secondItem="y4t-EG-ROd" secondAttribute="trailing" id="pPZ-ul-kZQ"/>
+                            <constraint firstItem="y4t-EG-ROd" firstAttribute="top" secondItem="9sC-x5-vBS" secondAttribute="bottom" constant="8" id="rPY-hg-iap"/>
+                            <constraint firstItem="ZRy-we-tEz" firstAttribute="leading" secondItem="y4t-EG-ROd" secondAttribute="leading" id="sfw-nH-xHG"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="chiView" destination="ZRy-we-tEz" id="55o-vx-Mgt"/>
+                        <outlet property="engView" destination="Uso-8A-j54" id="87V-34-oBG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ASo-TV-T1o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -611,6 +696,7 @@
     </scenes>
     <resources>
         <image name="iPhone 6 Plus" width="414" height="736"/>
+        <image name="iPhone 6 Plusen" width="414" height="736"/>
         <image name="label:3xc-yJ-UY7:patternImage" width="640" height="920">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU

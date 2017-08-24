@@ -9,10 +9,13 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    @IBOutlet weak var chiView: UIView!
 
+    @IBOutlet weak var engView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        chiView.alpha = 1
+        engView.alpha = 0
         // Do any additional setup after loading the view.
     }
 
@@ -21,8 +24,23 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+
+    @IBAction func backBtn(_ sender: Button) {
+        
         self.dismiss(animated: true, completion: nil)
+    }
+
+    @IBAction func choice(_ sender: UISegmentedControl) {
+        
+        if sender.selectedSegmentIndex == 0{
+            chiView.alpha = 1
+            engView.alpha = 0
+        }else{
+            chiView.alpha = 0
+            engView.alpha = 1
+        }
+        
+        
     }
 
 }
