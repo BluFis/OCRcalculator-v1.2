@@ -103,6 +103,7 @@
 		4328789219028BB1C42AA7B6CC19A7A4 /* GPUImageThresholdEdgeDetectionFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A2FAA2C020C3D85E5C79CD7B83A0E17 /* GPUImageThresholdEdgeDetectionFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43B2BBA6E662CED1F4571B87E571946F /* GPUImageFramebuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = A4E6E81986FB169E953262EB8ECCE50E /* GPUImageFramebuffer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43CB99203F824742D5BF3CCA122CCA6F /* GPUImageSingleComponentGaussianBlurFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 3048DBE624B42C2EDE1906B82A93386B /* GPUImageSingleComponentGaussianBlurFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4453E51D349A24B30111F9483EA022E2 /* SwiftOCRTraining.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186CA0D5562AF100657FDC1999C3AD8F /* SwiftOCRTraining.swift */; };
 		454AD96D338923A849372900E72137A5 /* GPUImageCrosshairGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 5570305A627683A34EC8A716573A8C15 /* GPUImageCrosshairGenerator.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		46CB8980F9B86D44DB369234EA5D0FB5 /* GPUImageLightenBlendFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E88F40EB8636062C5A2C5DF79BE5B38 /* GPUImageLightenBlendFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		470F75630CC92C8D827B49E20DF894D0 /* GPUImageRGBErosionFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 01C6A3EEAB2F4DA267C9D02303C75F08 /* GPUImageRGBErosionFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -453,6 +454,7 @@
 		16EB8F116CF11FBF22FB8DA38AADA650 /* GPUImageMedianFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPUImageMedianFilter.h; path = framework/Source/GPUImageMedianFilter.h; sourceTree = "<group>"; };
 		1715A8EFF2DB1A76149FAB632B519A9E /* GPUImageiOSBlurFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageiOSBlurFilter.m; path = framework/Source/GPUImageiOSBlurFilter.m; sourceTree = "<group>"; };
 		17852ED26144C506B0DF700C8A29A1F2 /* GPUImagePosterizeFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImagePosterizeFilter.m; path = framework/Source/GPUImagePosterizeFilter.m; sourceTree = "<group>"; };
+		186CA0D5562AF100657FDC1999C3AD8F /* SwiftOCRTraining.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftOCRTraining.swift; path = framework/SwiftOCR/SwiftOCRTraining.swift; sourceTree = "<group>"; };
 		18D3264754CC5872771621435573A31A /* GPUImageMultiplyBlendFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPUImageMultiplyBlendFilter.h; path = framework/Source/GPUImageMultiplyBlendFilter.h; sourceTree = "<group>"; };
 		18EF3752350C3641E1B4FEDDB4A1B939 /* GPUImageSolidColorGenerator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageSolidColorGenerator.m; path = framework/Source/GPUImageSolidColorGenerator.m; sourceTree = "<group>"; };
 		18F48697E73AAE69D1975709410BDB14 /* GPUImageFramebufferCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPUImageFramebufferCache.m; path = framework/Source/GPUImageFramebufferCache.m; sourceTree = "<group>"; };
@@ -958,6 +960,7 @@
 				74564221CE3B028030E720BA38BEABFC /* Random.swift */,
 				070CF7E35E279581F6D449495DFA3FDB /* Storage.swift */,
 				A242550D37ED4F17A3EADC65E4C60373 /* SwiftOCR.swift */,
+				186CA0D5562AF100657FDC1999C3AD8F /* SwiftOCRTraining.swift */,
 				6FC2967DB13C07DC0E5AA02C9D66C308 /* UnionFind.swift */,
 				C82A5808602710FC5B8E42EE12D30270 /* Vector.swift */,
 				3C860BA1434250B8CDF383DEEC62E45E /* Resources */,
@@ -1699,23 +1702,6 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0700;
-				TargetAttributes = {
-					0C9B5F21DE532C9709E83E9138070CD6 = {
-						LastSwiftMigration = 0900;
-					};
-					2597E77C6D3830202BFB48C276629F0A = {
-						LastSwiftMigration = 0830;
-					};
-					360117CFE012BEF869A99990894A1FB5 = {
-						LastSwiftMigration = 0830;
-					};
-					7F1C6F7C047ED0DA9FEB50BE3E2509F7 = {
-						LastSwiftMigration = 0830;
-					};
-					C0304BC94C93210B4DD802188F28A47E = {
-						LastSwiftMigration = 0830;
-					};
-				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1976,6 +1962,7 @@
 				3732B98D011E99E34EE5B658C3363903 /* Storage.swift in Sources */,
 				5D8C2DF692C07BF74B16DC69F35873E9 /* SwiftOCR-dummy.m in Sources */,
 				A775A5158A72E1EB2766A39F271542D6 /* SwiftOCR.swift in Sources */,
+				4453E51D349A24B30111F9483EA022E2 /* SwiftOCRTraining.swift in Sources */,
 				310032DB7BDA3570977B53E489BD83DF /* UnionFind.swift in Sources */,
 				04892DCE8C85A87A3D05AA1BE42188EE /* Vector.swift in Sources */,
 			);
@@ -2029,7 +2016,7 @@
 				MODULEMAP_FILE = "Target Support Files/GPUImage/GPUImage.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = GPUImage;
-				SDKROOT = iphoneos10.3;
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2038,9 +2025,9 @@
 			};
 			name = Debug;
 		};
-		0F3D125AB610FE68E93B62AAB667BBE9 /* Release */ = {
+		258CA0A9D3998B5F36A900D101E35F1D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 11CEC603337E81355517D451EC0D9E5B /* Pods-OcRcaculatorTests.release.xcconfig */;
+			baseConfigurationReference = D2DC514B9325426E7F413067D25C9BD2 /* SwiftOCR.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2054,20 +2041,17 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-OcRcaculatorTests/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftOCR/SwiftOCR-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftOCR/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-OcRcaculatorTests/Pods-OcRcaculatorTests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/SwiftOCR/SwiftOCR.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_OcRcaculatorTests;
+				PRODUCT_NAME = SwiftOCR;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2075,7 +2059,45 @@
 			};
 			name = Release;
 		};
-		166E2CAC58E8608AD59A6F0B71C9C3E0 /* Debug */ = {
+		356F272056CFB576184C26D793FC591B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABC65B65E0C4921D1DACF241613CCE76 /* Pods-OcRcaculator.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-OcRcaculator/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-OcRcaculator/Pods-OcRcaculator.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_OcRcaculator;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		643C76AA582046977B7877822ED7A258 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -2123,9 +2145,9 @@
 			};
 			name = Debug;
 		};
-		258CA0A9D3998B5F36A900D101E35F1D /* Release */ = {
+		6E535DC55D6961448CC3401C81F74733 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D2DC514B9325426E7F413067D25C9BD2 /* SwiftOCR.xcconfig */;
+			baseConfigurationReference = 11CEC603337E81355517D451EC0D9E5B /* Pods-OcRcaculatorTests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -2139,63 +2161,27 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftOCR/SwiftOCR-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftOCR/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-OcRcaculatorTests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwiftOCR/SwiftOCR.modulemap";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-OcRcaculatorTests/Pods-OcRcaculatorTests.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = SwiftOCR;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_OcRcaculatorTests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		5DD57A0DDAD61BD74E018CA608087FEE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 454BB506FF176CFF42FB229EE5F4D804 /* Pods-OcRcaculatorUITests.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-OcRcaculatorUITests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-OcRcaculatorUITests/Pods-OcRcaculatorUITests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_OcRcaculatorUITests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		63AFED1EE1CAE21F841B39F7BC08205A /* Debug */ = {
+		874525FAE7FC90E1F5387C98CAAE2CAB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 58C5C145B8751FAEC0C372FC4662A7D8 /* Pods-OcRcaculatorTests.debug.xcconfig */;
 			buildSettings = {
@@ -2213,7 +2199,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-OcRcaculatorTests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-OcRcaculatorTests/Pods-OcRcaculatorTests.modulemap";
@@ -2225,14 +2211,13 @@
 				PRODUCT_NAME = Pods_OcRcaculatorTests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		86D4BD6AA043FAEF554BEBFFEEC8E9DB /* Debug */ = {
+		8D7C0CC508DD4884984839FFD3CB7DDA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1953896F90CB9B3B9D51A10C84B9833F /* Pods-OcRcaculator.debug.xcconfig */;
 			buildSettings = {
@@ -2250,7 +2235,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-OcRcaculator/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-OcRcaculator/Pods-OcRcaculator.modulemap";
@@ -2295,9 +2280,45 @@
 				MODULEMAP_FILE = "Target Support Files/GPUImage/GPUImage.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = GPUImage;
-				SDKROOT = iphoneos10.3;
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A262577EB2518E0F5F93787FB979D2AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 407399C98BB2B9185369B68226C616D4 /* Pods-OcRcaculatorUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-OcRcaculatorUITests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-OcRcaculatorUITests/Pods-OcRcaculatorUITests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_OcRcaculatorUITests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -2332,7 +2353,6 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2340,7 +2360,7 @@
 			};
 			name = Debug;
 		};
-		AA0B5BDEB018901CD8F88AAD05F5B893 /* Release */ = {
+		C03B8870130C98D1B02B59D003687524 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -2384,16 +2404,16 @@
 			};
 			name = Release;
 		};
-		E2CEE79CD4019A17222195834981D13B /* Release */ = {
+		D5934BAD946CC074CA013A7BE98A12EA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 407399C98BB2B9185369B68226C616D4 /* Pods-OcRcaculatorUITests.release.xcconfig */;
+			baseConfigurationReference = 454BB506FF176CFF42FB229EE5F4D804 /* Pods-OcRcaculatorUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -2402,11 +2422,11 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-OcRcaculatorUITests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-OcRcaculatorUITests/Pods-OcRcaculatorUITests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -2414,50 +2434,11 @@
 				PRODUCT_NAME = Pods_OcRcaculatorUITests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
-		};
-		EE084B7E0E1E5E6106ED38EB7B80039F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = ABC65B65E0C4921D1DACF241613CCE76 /* Pods-OcRcaculator.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-OcRcaculator/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-OcRcaculator/Pods-OcRcaculator.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_OcRcaculator;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
@@ -2474,8 +2455,8 @@
 		239684F699BDDB8FAB6012155D6F2F4D /* Build configuration list for PBXNativeTarget "Pods-OcRcaculatorUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5DD57A0DDAD61BD74E018CA608087FEE /* Debug */,
-				E2CEE79CD4019A17222195834981D13B /* Release */,
+				D5934BAD946CC074CA013A7BE98A12EA /* Debug */,
+				A262577EB2518E0F5F93787FB979D2AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2483,8 +2464,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				166E2CAC58E8608AD59A6F0B71C9C3E0 /* Debug */,
-				AA0B5BDEB018901CD8F88AAD05F5B893 /* Release */,
+				643C76AA582046977B7877822ED7A258 /* Debug */,
+				C03B8870130C98D1B02B59D003687524 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2501,8 +2482,8 @@
 		56D5FB07E4394BDE4474A4C22859B44D /* Build configuration list for PBXNativeTarget "Pods-OcRcaculator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				86D4BD6AA043FAEF554BEBFFEEC8E9DB /* Debug */,
-				EE084B7E0E1E5E6106ED38EB7B80039F /* Release */,
+				8D7C0CC508DD4884984839FFD3CB7DDA /* Debug */,
+				356F272056CFB576184C26D793FC591B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2510,8 +2491,8 @@
 		56F38C9F8F14685B6A77454255007557 /* Build configuration list for PBXNativeTarget "Pods-OcRcaculatorTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				63AFED1EE1CAE21F841B39F7BC08205A /* Debug */,
-				0F3D125AB610FE68E93B62AAB667BBE9 /* Release */,
+				874525FAE7FC90E1F5387C98CAAE2CAB /* Debug */,
+				6E535DC55D6961448CC3401C81F74733 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

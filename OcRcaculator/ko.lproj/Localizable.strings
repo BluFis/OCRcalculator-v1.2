@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  OcRcaculator
+
+  Created by Apple on 2017/8/24.
+  Copyright © 2017年 Apple. All rights reserved.
+*/
+"暂停" = "일시 정지";
+"自动" = "자동";

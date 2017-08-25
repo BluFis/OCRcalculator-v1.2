@@ -98,10 +98,10 @@ open class SwiftOCRTraining {
             
             paragraphStyle.alignment = NSTextAlignment.center
             
-            return [NSAttributedStringKey.font.rawValue: randomFont(),
-                    NSAttributedStringKey.kern.rawValue: CGFloat(8) as NSObject,
-                    NSAttributedStringKey.foregroundColor.rawValue: OCRColor(red: 27/255 + randomFloat(0.2), green: 16/255 + randomFloat(0.2), blue: 16/255 + randomFloat(0.2), alpha: 80/100 + randomFloat(0.2)),
-                    NSAttributedStringKey.paragraphStyle.rawValue: paragraphStyle]
+            return [NSFontAttributeName: randomFont(),
+                    NSKernAttributeName: CGFloat(8) as NSObject,
+                    NSForegroundColorAttributeName: OCRColor(red: 27/255 + randomFloat(0.2), green: 16/255 + randomFloat(0.2), blue: 16/255 + randomFloat(0.2), alpha: 80/100 + randomFloat(0.2)),
+                    NSParagraphStyleAttributeName: paragraphStyle]
         }
         
         //Image
@@ -127,7 +127,7 @@ open class SwiftOCRTraining {
                 UIGraphicsBeginImageContext(randomImg.size)
                 randomImg.draw(in: CGRect(origin: CGPoint.zero, size: randomImg.size))
                 
-                NSString(string: code).draw(in: CGRect(origin: CGPoint(x: 0 + randomFloat(5), y: -15.5 + randomFloat(5)), size: randomImg.size), withAttributes:randomFontAttributes())
+                NSString(string: code).draw(in: CGRect(origin: CGPoint(x: 0 + randomFloat(5), y: -15.5 + randomFloat(5)), size: randomImg.size), withAttributes: randomFontAttributes())
                 
                 let customImage = UIGraphicsGetImageFromCurrentImageContext()
                 UIGraphicsEndImageContext()
